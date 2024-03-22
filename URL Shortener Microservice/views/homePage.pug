@@ -1,0 +1,8 @@
+doctype html
+html
+  head
+    title URL Shortener Microservice
+  body
+    form(action="api/shorturl" method="POST")
+      input(type="text" placeholder="Enter URL here" name="theURL" required)
+      input(type="submit" value="POST URL")
