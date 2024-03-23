@@ -10,6 +10,6 @@ const logs_1 = __importDefault(require("../controllers/logs"));
 const router = express_1.default.Router();
 router.get("/", users_1.getAllUsers);
 router.post("/", users_1.saveUser);
-router.post("/:_id/exercises", exercises_1.default);
-router.get(":_id/logs", logs_1.default);
+router.post("/exercises", exercises_1.default);
+router.get("/:_id/logs", logs_1.default);
 exports.default = router;

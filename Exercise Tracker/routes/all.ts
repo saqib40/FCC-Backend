@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/", getAllUsers);
 router.post("/", saveUser);
 
-router.post("/:_id/exercises", saveExercise);
-router.get(":_id/logs", getLogs);
+router.post("/exercises", saveExercise);
+router.get("/:_id/logs", getLogs);
 
 export default router;

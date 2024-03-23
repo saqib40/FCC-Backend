@@ -5,13 +5,11 @@ import logModel from "../models/logStructure";
 const saveExercise = async(req: Request, res: Response) => {
     try {
         const {username, duration, date} = req.body;
-        const id: string = req.params._id;
-        const exercise = await exerciseModel.create({username, duration, date, _id: id});
-        const count: number = await exerciseModel.find({_id: id}).countDocuments();
+        const exercise = await exerciseModel.create({username, duration, date});
+        const count: number = await exerciseModel.find({username: username}).countDocuments();
         const log = await logModel.findOneAndUpdate(
-            {_id: id},
+            {username: username},
             {
-            _id: id,
             username: username,
             count: count,
             $push: {log: exercise}

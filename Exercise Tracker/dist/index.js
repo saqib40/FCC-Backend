@@ -7,13 +7,9 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const all_1 = __importDefault(require("./routes/all"));
 const body_parser_1 = __importDefault(require("body-parser"));
-const path_1 = __importDefault(require("path"));
 const db_1 = __importDefault(require("./config/db"));
 const app = (0, express_1.default)();
-//app.use(bodyParser.urlencoded({ extended: true }));
 app.use(body_parser_1.default.json());
-app.set('view engine', 'pug');
-app.set('views', path_1.default.join(__dirname, "../", 'views'));
 dotenv_1.default.config();
 const port = parseInt(process.env.PORT || "4000");
 app.get("/api", (req, res) => {
