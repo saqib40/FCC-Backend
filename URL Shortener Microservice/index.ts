@@ -4,11 +4,15 @@ import path from "path";
 import router from "./routes/all";
 import dbConnect from "./config/db";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 const port: number = parseInt(process.env.PORT || "4000");
 
 const app: Express = express();
+
+// for testing
+app.use(cors({optionsSuccessStatus: 200}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 

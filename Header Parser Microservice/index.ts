@@ -1,6 +1,10 @@
 import express, { Express, Request, Response } from "express";
+import cors from "cors";
 
 const app: Express = express();
+
+// for testing
+app.use(cors({optionsSuccessStatus: 200}));
 
 const PORT: number = 4000;
 

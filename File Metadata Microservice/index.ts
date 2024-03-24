@@ -2,8 +2,12 @@ import express, { Express, Request, Response } from "express";
 import fileUpload from "express-fileupload";
 import path from "path";
 import router from "./routes/allOfThem";
+import cors from "cors";
 
 const app: Express = express();
+
+// for testing
+app.use(cors({optionsSuccessStatus: 200}));
 
 app.use(fileUpload({
     useTempFiles: true,
